@@ -1,29 +1,30 @@
 import React, { Component } from "react";
 
 //components
-import Header from "./components/header/header";
-import Blog from "./components/BlogCard/blog";
-import Footer from "./components/footer/footer";
-import Cover from "./components/cover/cover";
-import Carousel from "./components/carousell/carousel";
-import Newsletter from "./components/newslettter/newsletter";
-import Titleintroduction from "./components/titleintroduction/titleintroduction";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import { Home } from "./pages/home";
+import { Contact } from "./pages/contact";
+import { About } from "./pages/about";
 
 class App extends Component {
   render() {
-    
     return (
-      <div className="App">
-        <Header />
-        <Cover />
-        <Carousel/>
-        <Titleintroduction />
-        
-        
-        <Blog />
-        <Newsletter />
-        <Footer />
-      </div>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Switch>
+          <Route exact true path="/" component={Home} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/about" exact component={About} />
+
+          {/* Create a 404 Page If route not found,
+            currently being Redirected to Home Page */}
+          <Route path="/" render={() => <Redirect to={{ pathname: "/" }} />} />
+        </Switch>
+      </Router>
     );
   }
 }

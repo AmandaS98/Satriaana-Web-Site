@@ -1,29 +1,53 @@
-import React, { Component } from "react";
-import "./newsletter.css";
+import React, { Component } from 'react';
+import './newsletter.css';
 
 class Newsletter extends Component {
-    render(){
-        return(
-            <div className="newsletter-subscribe">
-				<div className="container">
-                    <div className="row">
-                            <div className="col-md-7">
-                                <div class="intro">
-                                    <h2 class="text-left">Subscribe for our Newsletter</h2>
-                                    <p class="text-left">Subscribe to our newsletter to get in touch with us</p>
-                                </div>
-                            </div>
-                            <div className="col-md-5">
-                                <form method="post">
-                                    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></input></div>
-                                    <div class="form-group"><button class="btn btn-primary" type="submit">Subscribe </button></div>
-                                </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
+  render() {
+    return (
+      <div
+        style={{
+          backgroundColor: '#222f3a',
+          fontFamily: 'Kumbh Sans',
+          color: 'rgb(255,255,255)',
+        }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <h1>
+                <strong>Subscribe to our Newsletter</strong>
+                <br />
+              </h1>
 
+              <p>
+                Stay in touch for new updates&nbsp;
+                <br />
+                Don't worry, we won't be spamming you
+                <br />
+              </p>
+              <input
+                type="text"
+                placeholder="&nbsp;&nbsp;&nbsp;Email address"
+                style={{
+                  fontSize: '18px',
+                  marginRight: '10px',
+                  marginTop: '20px',
+                  height: '38px',
+                  width: '260px',
+                }}
+              />
+              <button
+                className="btn btn-primary"
+                type="button"
+                style={{ marginTop: '7px', marginBottom: '9px', height: '38px', width: '120px' }}
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 export default Newsletter;

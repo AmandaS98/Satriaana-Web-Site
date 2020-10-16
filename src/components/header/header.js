@@ -1,49 +1,73 @@
 import React, { Component } from "react";
 import "./header.css";
-//import Logo from '../logoImage/satrianna.jpeg';
-
-//header component
+import { Link } from "react-router-dom";
+import HeaderLogo from "../../assets/satriaana-logo.png";
 
 class header extends Component {
   render() {
     return (
       <header>
-        <nav class="container-fluid nav">
-          <div className="col-md-12">
-            <div class="logo">
-              <a href="/">
-                <img
-                  src="satriaana-logo.png"
-                  alt="Satriaana"
-                  width="180"
-                  height="auto"
-                />
-              </a>
-            </div>
-            <div id="mainListDiv" class="main_list">
-              <ul class="navlinks">
-              <li>
-                  <a href="/">Home</a>
+        <nav
+          className="navbar navbar-light navbar-expand-md"
+          style={{
+            fontFamily: "Kumbh Sans",
+            fontWeight: "bold",
+            fontSize: "18px",
+          }}
+        >
+          <div className="container-fluid">
+            <a
+              className="navbar-brand"
+              href="https://satriaana.github.io/Satriaana-Web-Site/"
+            >
+              <img
+                alt
+                src={HeaderLogo}
+                style={{
+                  width: "130px",
+                }}
+              />
+            </a>
+            <button
+              data-toggle="collapse"
+              className="navbar-toggler"
+              data-target="#navcol-1"
+            >
+              <span className="sr-only">Toggle navigation</span>
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div
+              className="collapse navbar-collapse d-md-flex d-lg-flex justify-content-md-end justify-content-lg-end"
+              id="navcol-1"
+            >
+              <ul className="nav navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/">
+                    Home
+                  </Link>
                 </li>
-                <li>
-                  <a href="/">Blog</a>
+                <li className="nav-item">
+                  <a className="nav-link" href="https://blog.satriaana.org">
+                    Blog
+                  </a>
                 </li>
-                <li>
-                  <a href="/">Forum</a>
+                <li className="nav-item">
+                  <a className="nav-link" href="https://forum.satriaana.org">
+                    Forum
+                  </a>
                 </li>
-                <li>
-                  <a href="/">About</a>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/contact">
+                    Contact
+                  </Link>
                 </li>
-                <li>
-                  <a href="/">Contact</a>
+                <li className="nav-item">
+                  <Link className="nav-link" style={{ textDecoration: "none" }} to="/about">
+                    About
+                  </Link>
                 </li>
               </ul>
             </div>
-            <span class="navTrigger">
-              <i></i>
-              <i></i>
-              <i></i>
-            </span>
           </div>
         </nav>
       </header>
